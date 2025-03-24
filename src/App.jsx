@@ -2,13 +2,19 @@
 
 import React from 'react';
 import Home from './Home';
-import './App.css'; // Import global styles
+import AddBookForm from './components/AddBookForm';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add-book" element={<AddBookForm />} />
+
+      </Routes>
+    </Router>
   );
 }
 
